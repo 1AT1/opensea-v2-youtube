@@ -4,7 +4,7 @@ import { ThemeProvider } from 'next-themes'
 
 const MyApp = ({ Component, pageProps }) => {
   return (
-    <ThirdwebProvider desiredChainId={ChainId.Rinkeby}>
+    <ThirdwebProvider desiredChainId={ChainId.sepolia}>
       <ThemeProvider enableSystem={true} attribute='class'>
         <Component {...pageProps} />
       </ThemeProvider>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { useMarketplace } from '@thirdweb-dev/react'
+import { useContract, useMarketplace } from '@thirdweb-dev/react'
 import NFTCard from './NFTCard'
 
 const style = {
@@ -9,8 +9,11 @@ const style = {
 
 const Listings = () => {
   const [listings, setListings] = useState([])
+  const {contract} = useContract("0xF9E2fCFb56fb32e81345DcEE60410eB56Ebd8917",'marketplace-v3',
+  console.log(contract)
+  )
   const marketplace = useMarketplace(
-    process.env.NEXT_PUBLIC_MARKETPLACE_CONTRACT_ADDRESS,
+    "0xF9E2fCFb56fb32e81345DcEE60410eB56Ebd8917", 'marketplace-v3',
   )
 
   useEffect(() => {
