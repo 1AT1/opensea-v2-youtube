@@ -21,7 +21,7 @@ const Listings = () => {
   }, [])
 
   const getListings = async () => {
-    try {
+    try { 
       const list = await marketplace.getActiveListings()
 
       setListings(list)
