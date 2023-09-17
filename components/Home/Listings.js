@@ -10,8 +10,8 @@ const style = {
 const Listings = () => {
   const [listings, setListings] = useState([])
   const {contract} = useContract("0xF9E2fCFb56fb32e81345DcEE60410eB56Ebd8917",'marketplace-v3',
-  console.log(contract)
   )
+  console.log(contract)
   const marketplace = useMarketplace(
     "0xF9E2fCFb56fb32e81345DcEE60410eB56Ebd8917", 'marketplace-v3',
   )
@@ -35,21 +35,21 @@ const Listings = () => {
       {listings.length > 0 ? (
         <>
           {listings?.map((listing, index) => (
-            <Link
+            (<Link
               key={index}
               href={`/assets/${listing.assetContractAddress}/${listing.id}`}
             >
-              <a>
-                <NFTCard listing={listing} />
-              </a>
-            </Link>
+
+              <NFTCard listing={listing} />
+
+            </Link>)
           ))}
         </>
       ) : (
         <div>Loading...</div>
       )}
     </div>
-  )
+  );
 }
 
 export default Listings

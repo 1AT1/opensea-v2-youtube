@@ -70,9 +70,9 @@ function Navbar() {
       <div className='flex items-center justify-between space-x-6'>
         <div className='xl:pr-40'>
           <Link href='/'>
-            <a>
-              <Logo />
-            </a>
+
+            <Logo />
+
           </Link>
         </div>
 
@@ -93,7 +93,7 @@ function Navbar() {
         </div>
       </div>
     </header>
-  )
+  );
 }
 
 export default Navbar
