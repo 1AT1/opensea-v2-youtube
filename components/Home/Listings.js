@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { useContract, useMarketplace } from '@thirdweb-dev/react'
+import { useContract, getListings } from '@thirdweb-dev/react'
 import NFTCard from './NFTCard'
 
 const style = {
@@ -12,9 +12,6 @@ const Listings = () => {
   const {contract} = useContract("0xF9E2fCFb56fb32e81345DcEE60410eB56Ebd8917",'marketplace-v3',
   )
   console.log(contract)
-  const marketplace = useMarketplace(
-    "0xF9E2fCFb56fb32e81345DcEE60410eB56Ebd8917", 'marketplace-v3',
-  )
 
   useEffect(() => {
     getListings()
@@ -22,7 +19,7 @@ const Listings = () => {
 
   const getListings = async () => {
     try { 
-      const list = await marketplace.getActiveListings()
+      const list = await contract.getDirectListing()
 
       setListings(list)
     } catch (error) {

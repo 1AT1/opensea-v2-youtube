@@ -1,0 +1,4 @@
+https://portal.thirdweb.com/python/python.marketplace
+https://blog.thirdweb.com/guides/nft-marketplace-with-typescript-next/
+https://portal.thirdweb.com/sdk
+https://portal.thirdweb.com/react/getting-started
