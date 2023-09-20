@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { useContract, getListings } from '@thirdweb-dev/react'
+import { useContract, useActiveListings } from '@thirdweb-dev/react'
 import NFTCard from './NFTCard'
 
 const style = {
@@ -19,7 +19,11 @@ const Listings = () => {
 
   const getListings = async () => {
     try { 
-      const list = await contract.getDirectListing()
+      const { data: listings, isLoading: loadingListings } =
+      useActiveListings(contract);
+      console.log(listings)
+      console.log(loadingListings)
+  
 
       setListings(list)
     } catch (error) {
