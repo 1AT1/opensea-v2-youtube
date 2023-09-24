@@ -11,21 +11,19 @@ const Listings = () => {
   const [listings, setListings] = useState([])
   const {contract} = useContract("0xF9E2fCFb56fb32e81345DcEE60410eB56Ebd8917",'marketplace-v3',
   )
+  let { data, isLoading, error, alt } =
+  useActiveListings(contract) ;
   console.log(contract)
 
   useEffect(() => {
     getListings()
   }, [])
 
-  const getListings = async () => {
+  const getListings = async() => {
     try { 
-      const { data: listings, isLoading: loadingListings } =
-      useActiveListings(contract);
       console.log(listings)
-      console.log(loadingListings)
-  
-
-      setListings(list)
+      //console.log(loadingListings)
+      //setListings(list)
     } catch (error) {
       console.error(error)
     }
